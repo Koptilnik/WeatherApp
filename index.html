@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherByDimentrius</title>
+    <style>
+        .Hselector{
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .Hselector-for-click{
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .search{
+            width: 500px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            overflow: auto;
+            border-radius: 20px;
+            margin: 30px;
+           
+        }
+        #spisok{
+            color: white;
+        }
+        ul {
+                list-style-type: none;
+                padding: 0;
+        }
+        header{
+            width: 100%;
+            height: 80px;
+            background-color: rgb(176, 176, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            opacity: 0.45;
+        }
+        body{
+            margin: auto;
+            background-image: url("icons/bg.jpg");
+            background-color: rgb(75, 75, 209);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-position: center;
+            overflow-y: hidden;
+            font-family: RobotoSlab;
+        }
+        #sel{
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        #inp{
+            margin-left: 10px;
+        }
+        @font-face {
+		font-family: 'RobotoSlab';
+		src: url(font/RobotoSlab.ttf); 
+	}
+    .cont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+
+    }
+    .vivod{
+        width: 700px;
+        height: 400px;
+        background-color: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        margin-left: 10px;
+        position: relative;
+        border-radius: 20px;
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #pogodi-cont{
+        width: 700px;
+        height: 300px;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .pogodi
+    {
+        display: none;
+        width: 150px;
+        height: 150px;
+        bottom: 25px;
+    }
+    .cont-cont{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly
+    }
+    @media (max-width: 830px) {
+        .cont-cont{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .vivod{
+        width: 300px;
+        height: 200px;
+        background-color: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        margin-left: 10px;
+        position: relative;
+        border-radius: 20px;
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .search{
+            width: 300px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            overflow: auto;
+            border-radius: 20px;
+            margin: 30px;
+           
+        }
+        #pogodi-cont{
+        width: 100%;
+        height: 300px;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        .pogodi
+        {
+            display: none;
+            width: 100px;
+            height: 100px;
+            bottom: 25px;
+        }
+        #city-info{
+            margin-top: 10px;
+        }
+    }
+    .text-cont{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+    }
+
+    </style>
+</head>
+<body>
+
+    <header> Моя погода</header>
+    <div class="cont">
+        <select name="sel" id="sel" style="font-family: RobotoSlab;">
+            <option value="" disabled="disabled" selected="selected">Выбрать здесь</option>
+        </select>
+        <p>
+        <input type="text" id="inp" placeholder="найти тут" style="font-family: RobotoSlab;">
+        <br>
+    </div>
+
+    <div class="cont-cont">
+        <div class="search">
+            <ul id="spisok"></ul>
+        </div>
+        <br>
+        
+    <div class="vivod" >
+        <div class="text-cont">
+            <span id="city-info" style="color: white;"></span>
+            <p id ="temperature" style="color: white;"></p>
+        </div>
+            <div id="pogodi-cont">
+                <img src="icons/sun.png" alt="" id="sunny" class="pogodi">
+                <img src="icons/cloud.png" alt="" id="clouds" class="pogodi">
+                <img src="icons/rainy.png" alt="" id="rain" class="pogodi">
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="script/wscript.js"></script>
+</body>
+</html>
